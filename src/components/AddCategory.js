@@ -1,12 +1,11 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import { nanoid } from "nanoid";
 
 const AddCategory = ({ categories, setCategories }) => {
   const [inputValue, setInputValue] = useState("");
 
   const handlerCategory = () => {
-    const obj = { input: inputValue, id: nanoid() };
+    const obj = { input: inputValue, id: Math.random() * 100 };
     if (inputValue.trim() !== "") {
       setCategories(categories.concat(obj));
     }
@@ -20,7 +19,7 @@ const AddCategory = ({ categories, setCategories }) => {
 
   return (
     <div>
-      <h3>Add Category</h3>
+      <h3>Add Task</h3>
 
       <input onChange={handlerChange} type="text" value={inputValue} />
       <button onClick={handlerCategory}>Cargar</button>

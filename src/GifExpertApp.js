@@ -3,12 +3,9 @@ import AddCategory from "./components/AddCategory";
 import GiftGridList from "./components/GiftGridList";
 import Header from "./components/Header";
 import { useState } from "react";
-import { nanoid } from "nanoid";
 
 export default function GifExpertApp() {
-  const [categories, setCategories] = useState([
-    { input: "Dragon Ball Z", id: nanoid() }
-  ]);
+  const [categories, setCategories] = useState([]);
 
   return (
     <div className="GifExpertApp">
